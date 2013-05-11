@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-05-2013 a las 19:24:07
+-- Tiempo de generación: 11-05-2013 a las 19:35:20
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -134,6 +134,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `usuarioId` int(11) NOT NULL,
   `articulo` varchar(1000) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
+  `idTema` int(11) NOT NULL,
   PRIMARY KEY (`postId`),
   KEY `usuarioId` (`usuarioId`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
@@ -142,14 +143,14 @@ CREATE TABLE IF NOT EXISTS `post` (
 -- Volcado de datos para la tabla `post`
 --
 
-INSERT INTO `post` (`postId`, `usuarioId`, `articulo`, `fecha`) VALUES
-(9, 1, '{Ã±l{Ã±l{Ã±', '2012-05-20'),
-(10, 1, 'qÃ±lkdlÃ±k', '2012-05-21'),
-(12, 1, '{Ã±l{Ã±l {Ã±l{Ã±l {Ã±l{Ã±l {Ã±l{Ã±Ã±l aslkjdddddd alskjdddddddd aslkjddddddddddddd lkajsdddddddddddddd qlskdjaaaaaa lkajsdddalskjdsa lkjasd Ã±{{llllllllllllllllllllllllllllllllllllllllllllllll dfllllllllllllllllllllllllllllllllllllllllllllllllllllll sd{{{{{{{{{{{{{{{{{{{{{{', '2012-05-22'),
-(13, 8, 'Hola a todos :)', '2012-05-22'),
-(14, 1, '\r\n', '2012-05-23'),
-(15, 1, '{lfds{l{Ã±l', '2012-05-23'),
-(16, 8, '-ksdss{Ã±k {Ã±l{dfl{Ã±fd {lfd{l {fdl{Ã±fd {l{Ã± {fdl{Ã±gfdl {lfdÃ±lgf d{l fdg{l  {Ã±lfdlfgd', '2012-05-23');
+INSERT INTO `post` (`postId`, `usuarioId`, `articulo`, `fecha`, `idTema`) VALUES
+(9, 1, '{Ã±l{Ã±l{Ã±', '2012-05-20', 0),
+(10, 1, 'qÃ±lkdlÃ±k', '2012-05-21', 0),
+(12, 1, '{Ã±l{Ã±l {Ã±l{Ã±l {Ã±l{Ã±l {Ã±l{Ã±Ã±l aslkjdddddd alskjdddddddd aslkjddddddddddddd lkajsdddddddddddddd qlskdjaaaaaa lkajsdddalskjdsa lkjasd Ã±{{llllllllllllllllllllllllllllllllllllllllllllllll dfllllllllllllllllllllllllllllllllllllllllllllllllllllll sd{{{{{{{{{{{{{{{{{{{{{{', '2012-05-22', 0),
+(13, 8, 'Hola a todos :)', '2012-05-22', 0),
+(14, 1, '\r\n', '2012-05-23', 0),
+(15, 1, '{lfds{l{Ã±l', '2012-05-23', 0),
+(16, 8, '-ksdss{Ã±k {Ã±l{dfl{Ã±fd {lfd{l {fdl{Ã±fd {l{Ã± {fdl{Ã±gfdl {lfdÃ±lgf d{l fdg{l  {Ã±lfdlfgd', '2012-05-23', 0);
 
 -- --------------------------------------------------------
 
@@ -224,6 +225,18 @@ INSERT INTO `repost` (`repostId`, `postID`, `usuarioId`, `articulo`, `fecha`) VA
 (45, 13, 1, 'Ã±lkdfs{Ã±ldsfÃ±ldfs{l{Ã±sl{Ã±fsd', '2012-05-23'),
 (46, 13, 1, '{Ã±ldasdl{sdl{Ã±sdl{', '2012-05-23'),
 (47, 15, 1, 'Ã±l,Ã±llÃ±', '2012-05-23');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `temas`
+--
+
+CREATE TABLE IF NOT EXISTS `temas` (
+  `idTema` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreTema` varchar(100) NOT NULL,
+  PRIMARY KEY (`idTema`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
