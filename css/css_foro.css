@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+	div.marco{
+		padding:10px 15px 10px 15px;
+		margin:10px 0px 10px 0px;
+	}
+	div.marco p{
+		font-size:12px;
+	}
+	#info_usuario{
+		height:50px;
+		padding:5px;
+		border-bottom:2px solid #0CF;
+	}
+	#info_usuario img{
+		width:50px;
+		height:50px;
+		float:left;
+	}
+	span{
+/*		color:#29B5E9;*/
+		color:#013D7B;
+		font-weight:bold;
+		padding:2px 2px 2px 60px;
+		display:block;
+	}
+	span.usuario{
+		height:25px;
+	}
+	span.fecha{
+		font-size:10px;
+		height:25px;	
+	}
+	div.articulo{
+		font-size:16px;
+		text-indent:30px;
+		padding:5px;
+	}
+	div.articulo_nuevo{
+		padding:5px;
+	}
+	
+/*	div.respuestas div.marco{
+		background:#94D7F4;
+	}*/
+
+	div.respuestas span{	
+		color:#013D7B;		
+	}
+	div.respuestas #info_usuario{
+		border-bottom:2px solid #013D7B;
+	}
+	
+	textarea{
+		max-width:700px;
+		min-width:700px;
+		max-height:20px;
+		min-height:20px;
+		padding:5px;
+		color:#29B5E9;
+		font-size:12px;
+	}
+	div.marco_interno #info_usuario img{
+		height:38px;
+		width:38px;
+	}
+	div.marco_interno #info_usuario{
+		height:40px;
+	}	
+	div.marco_interno{
+		padding:5px 15px 5px 15px;
+		margin:5px 0px 5px 0px;
+		font-size:12px;
+	}
+	div.marco_interno span{
+		height:15px;
+	}
+	div.marco_interno p{
+		font-size:12px;
+	}	
+	.marco_interno textarea{
+		max-width:665px;
+		min-width:665px;
+		max-height:20px;
+		min-height:20px;
+		padding:5px;
+		color:#29B5E9;
+		font-size:12px;
+	}	
+	input.boton{
+		width:70px;
+		height:25px;
+		font-size:10px;
+		float:right;
+	}

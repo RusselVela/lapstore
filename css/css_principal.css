@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+#v_principal img{
+	padding:30px;
+}
+div.resenia{
+	text-indent:30px;
+	text-align:justify;
+}
+div.marco div.marco{
+	border: #0099FF 1px solid;
+	padding:15px;
+	width:350px;
+}
+div.marco div.marco p{
+	color:#013D7B;
+	font-size:24px;
+	text-align:center;	
+}
+input.boton{
+	width:100px;
+	font-size:12px;
+	float:right;
+}

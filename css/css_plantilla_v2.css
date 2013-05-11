@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+/*Etiquetas generales*/
+body{
+    background:#FFB6D7;    
+}
+
+label{
+    color:#418eb6;
+}
+input,textarea,select{
+    border:#94D7F4 1px solid;    
+    color:#F768A1;
+}
+input:focus,textarea:focus,select:focus{
+    border: #0099FF 1px solid;
+}
+
+/*Encabezado de la pagina*/
+div.encabezado{
+    background:#7A0177;
+    color:#FFF;
+		-webkit-box-shadow:0px 0 50px #7A0177;
+		-moz-box-shadow:0px 0 50px #7A0177; 
+		box-shadow:0px 0 50px #7A0177;    
+}
+/*Perfil del usuario*/
+div.mini_perfil ul li a{
+    color:#FFF;
+    background:#F768A1;	
+    border:#AA0131 1px solid;		
+}
+div.mini_perfil ul li a:hover{
+    background: url(../img/utileria/bg-selected.gif); 
+}
+div.mini_perfil ul li:hover ul{
+    background:#7A0177;
+}		
+/*Eslogan de la pagina*/
+
+div.slogan a{
+    color:#FFF;		
+}
+/*Menu del sitio web*/
+div.menu{
+    			-webkit-box-shadow:0px 0 30px #7A0177;
+			-moz-box-shadow:0px 0 30px #7A0177; 
+			box-shadow:0px 0 30px #7A0177;	
+}
+div.menu ul li{
+    background:#AE017E;		
+}
+div.menu ul li:hover{
+    background:#7A0177;
+}
+div.mini_perfil ul li ul li a:hover{
+    background:#7A0177;
+}
+div.menu ul li a{
+    color:#FFF;
+    background:#AE017E;
+    border:1px #AA0131 solid;
+}
+
+div.menu ul li a:hover{                    
+        height:28px;
+        background:#7A0177;
+}
+/*Contenido de la pagina*/
+/*Marco*/
+div.marco{
+    background:#FFF7F3;
+}
+/*Marco interno*/
+div.marco_interno{
+    background:#FCC5C0;
+}
+/*.boton{
+    background: #FFB6D7;
+}
+.boton:hover {
+    border-top-color: #F768A1;
+    background: #F768A1;
+    color:#d0e8f7
+}*/
+
+#menu_adm {  
+ 
+    	-webkit-box-shadow:0px 0 50px #F768A1;
+	-moz-box-shadow:0px 0 50px #F768A1; 
+	box-shadow:0px 0 50px #F768A1;
+        box-shadow: 0px 0px 33px 32px #F768A1;
+}

@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+	p,h3 span{
+		text-align:justify;
+	}
+	div.mini_perfil{
+		width:650px;
+	}
+	div.contenido{
+		padding-top:90px;
+		width:650px;
+	}
+	div.marco{
+		width:600px;
+	}
+	div.textos{
+		padding: 10px;
+		width:260px;
+		float:left;
+		font-size:12px;
+	}
+	div.descripcion p{
+		text-indent:30px;
+	}
+	div.imagenes{
+		padding: 20px;
+		width:260px;
+		float:right;
+	}
+	div.imagenes img{
+		width:250px;
+		height:250px;		
+		float:right;
+	}
+	div.pie{
+		 margin:10px;
+		 padding:10px;
+		 border:#006 2px solid;
+	}
+	td.prop{
+		font-weight:bold;
+	}
+	table{
+		margin:auto;
+		width:200px;
+	}
+	table caption{
+		font-weight:bold;
+		padding: 15px 0 5px 0;
+	}
+		.boton{
+		margin:auto;
+		margin:10px 0 0 80px;
+		width:130px;
+		font-size:14px;
+	}

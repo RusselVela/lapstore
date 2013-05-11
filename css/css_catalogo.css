@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+	sup{
+		font-size:12px;
+	}
+	div.marco{
+		padding:15px;
+		margin:10px 0px 10px 0px;
+	}
+	div.descripcion{
+		width:520px;	
+		float:right;
+	}
+	div.imagen{
+		
+		float:left;
+	}
+	div.imagen img{
+		height:150px;		
+		width: 150px;
+		float:left;
+	}
+	input.boton{
+		width:100px;
+		font-size:12px;
+		float:right;
+	}
+	

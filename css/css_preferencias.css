@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.personaliza{
+	width:200px;
+	margin:auto;
+}
+input.boton{
+	width:100px;
+	font-size:12px;
+
+}

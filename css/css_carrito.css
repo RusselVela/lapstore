@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+	div.contenido{
+		height:750px;                
+	}
+	div.marco{
+       	font-size: 15px;
+		/*background:#EAF3FA;*/
+		padding:20px;
+		padding-bottom:50px;
+		border-radius:10px;
+		margin:auto;
+		margin-top:10px;
+	}	
+	table{
+            width: 700px;
+		border-collapse:collapse;
+/*		border:#009 solid 1px;*/
+		border-spacing:0px;
+	}
+        table img{
+            width: 50px;
+            height: 50px;
+	}
+	table th{
+/*		border:#29B5E9 solid 2px;*/
+border: #FFF solid 2px;
+		background:#7AB5E2;
+	}
+	table td.totales{
+		text-align:center;
+		border-left:hidden;
+		border-bottom:hidden;
+	}
+	table td{
+		text-align:center;
+/*		border:#29B5E9 solid 1px;*/
+border:#FFF solid 1px;
+                
+	}
+	div.carrito table{
+		margin:auto;
+	}
+	div.carrito input.boton{
+		float:right;
+	}
+	input.boton{		
+		width:160px;
+                float: right;
+	}
