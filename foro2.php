@@ -27,7 +27,6 @@ filtro_login();
             echo generarEncabezadoHTML();
             echo generarMenu();
             echo generarMenuAdmin();
-			//echo generarBuscador();
             ?>
         </div>       
         <div class="contenido" >
@@ -40,10 +39,6 @@ filtro_login();
 
             <?php
 //            registrarPost();
-//            eliminarPost();
-//            eliminarRepost();
-//            registrarRepost();
-//            echo listarPosts();
             ?>
         </div>
     </body>

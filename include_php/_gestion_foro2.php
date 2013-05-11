@@ -5,14 +5,14 @@ include_once 'DB/usuarioDB.php';
 
 function listarTemas(){
 	$temas=obtenerTemas();
-	$html="<table>";
+	$html="<table class='foro'>";
 	foreach($temas as $tema){
 		$idTema=$tema["idTema"];
 		$nombreTema=$tema["tema"];
 		$usuario=obtenerUsuarioPorId($tema["creador"]);
 		$nombreUsuario=$usuario["nombre"]." ".$usuario["apellido"];
 		$numeroPosts=$tema["numeroPosts"];
-		$html.="<tr id='cabezaTema'>
+		$html.="<tr class='cabezaTema'>
 					<td>".$nombreTema."</a></td>
 					<td>".$nombreUsuario."</td>
 					<td>".$numeroPosts."</td>
