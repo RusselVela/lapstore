@@ -13,8 +13,7 @@
         return $fila;
     }
     
-    function obtenerUsuarioPorId($usuarioId){
-        
+    function obtenerUsuarioPorId($usuarioId){  
         $conexion=abrirConexion();
         selecionarBD($conexion);
         $sql = "SELECT * FROM usuarios WHERE usuarioId ='".mysql_real_escape_string($usuarioId)."'";

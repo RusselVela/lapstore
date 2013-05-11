@@ -1,7 +1,58 @@
 <?php
     include_once 'conexionGeneral.php';
-//    include_once 'usuarioDB.php';
+  
+  	function obtenerTemas(){
+		$conexion=abrirConexion();
+		selecionarBD($conexion);
+		$sql="SELECT * FROM temas ORDER BY idTema DESC";
+		$resultado_peticion=ejecutarConsulta($sql,$conexion);
+		$indice=0;
+		$temas=array();
+		while($fila=mysql_fetch_array($resultado_peticion)){
+			$numeroPosts=obtenerNumeroPostsPorTema($fila["idTema"]);
+			$temas[$indice]["idTema"]=$fila["idTema"];
+			$temas[$indice]["tema"]=$fila["nombreTema"];
+			$temas[$indice]["creador"]=$fila["idUsuarioCreador"];
+			$temas[$indice]["numeroPosts"]=$numeroPosts;
+			$indice++;
+		}
+		cerrarConexion($conexion);
+		return $temas;
+	}
     
+	function obtenerNumeroPostsPorTema($idTema){
+		$conexion=abrirConexion();
+		selecionarBD($conexion);
+		$sql="SELECT * FROM post WHERE idTema=".$idTema;
+		$resultado_peticion=ejecutarConsulta($sql,$conexion);
+		$indice=0;
+		while($fila=mysql_fetch_array($resultado_peticion)){
+			$indice++;
+		}
+		cerrarConexion($conexion);
+		return $indice;
+	}
+	
+	function obtenerPostsPorTema($idTema){
+		$conexion=abrirConexion();
+		selecionarBD($conexion);
+		$sql="SELECT * FROM post WHERE idTema=".$idTema;
+		$resultado_peticion=ejecutarConsulta($sql,$conexion);
+		$indice=0;
+		$listaPost=array();
+		while($fila=mysql_fetch_array($resultado_peticion)){
+			$listaPost[$indice]["idPost"]=$fila["postId"];
+			$listaPost[$indice]["nombre"]=$fila["nombrePost"];
+			$listaPost[$indice]["creador"]=$fila["usuarioId"];
+			$listaPost[$indice]["respuestas"]=count(obtenerRepostDePostPorId($fila["postId"]));
+			$indice++;
+		}
+		cerrarConexion($conexion);
+		return $listaPost;
+	}
+	
+	//FIN MODIFICACIONES
+	
     function obtenerTodosPost(){        
         $conexion=abrirConexion();
         selecionarBD($conexion);
@@ -17,18 +68,17 @@
         return $posts;
     }
    
-    function obtenerPostPorId($postId){
-        
+    function obtenerPostPorId($postId){  
         $conexion=abrirConexion();
         selecionarBD($conexion);
         $sql = "SELECT * FROM post WHERE postId = '".mysql_real_escape_string($postId)."'";
         $resultado_peticion = ejecutarConsulta($sql,$conexion);
-        $posts = array();
-        while($fila = mysql_fetch_array($resultado_peticion)){
-            $posts[0]= $fila;
-        }
-        cerrarConexion($conexion);
-        return $posts;
+        $posts;
+        if($fila = mysql_fetch_array($resultado_peticion)){ 
+			$posts=$fila;
+        }            
+		cerrarConexion($conexion);
+        return $posts; 
     }
     
     function obtenerRepostDePostPorId($postId){
