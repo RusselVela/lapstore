@@ -41,7 +41,7 @@ function generarMenu() {
                     <li class="categoria"><a href="categoria.php">Productos</a>'
             . listarCategoriasMenu() .
             '</li>                   
-                    <li><a href="foro.php">Foro</a></li>
+                    <li><a href="foro2.php">Foro</a></li>
                     <li><a href="acerca.php">Nosotros</a></li>
                    
                 </ul>  

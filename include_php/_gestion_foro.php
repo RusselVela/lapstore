@@ -44,13 +44,13 @@ function listarPosts() {
 
 function listarPost($postId) {
     $SALTO = "\n";
-    $cadena_post = '';
+    //s$cadena_post = '';
     $posts = obtenerPostPorId($postId);
     foreach ($posts as $post) {
         $cadena_post = "";      
         $cadena_post .= '    <div class="clearboth"></div>' . $SALTO;
-        $cadena_responderPost = '<div class="respuestas">' . $SALTO;
-        $cadena_repost = listarRepostDePost($post['postId'], $post['usuarioId']);
+        //$cadena_responderPost = '<div class="respuestas">' . $SALTO;
+        $cadena_repost = listarRepostDePost($postId, $post['usuarioId']);
         if($cadena_repost==""){
             $cadena_post .='<div class="marco_interno">No hay comentarios</div>';
         }
@@ -58,7 +58,7 @@ function listarPost($postId) {
             $cadena_post .= $cadena_repost;
         }
         $cadena_post .= generarFormRespuesta($postId);
-        $cadena_responderPost .= '</div>' . $SALTO;
+        //$cadena_responderPost .= '</div>' . $SALTO;
         $cadena_post .= '</div>' . $SALTO;
     }
     if ($cadena_post == "") {
