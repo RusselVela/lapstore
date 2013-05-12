@@ -6,17 +6,18 @@ include_once 'DB/usuarioDB.php';
 function obtenerFormularioNuevoPost(){
 	$html=" <div id='formularioPost'>
 				<table>
+					<tr><td><input type='hidden' id='usuario' value='".$_SESSION['usuarioId']."' /></td></tr>
 					<tr>
 						<td>Categoría</td>
 						<td>".construirSelectTemas()."</td>
 					</tr>
 					<tr>
 						<td>Título</td>
-						<td><input type='text'/></td>
+						<td><input type='text' id='nombrePost'/></td>
 					</tr>
 					<tr>
 						<td>Contenido</td>
-						<td class='fp'><textarea id='txa'></textarea></td>
+						<td class='fp'><textarea id='articulo'></textarea></td>
 					</tr>
 					<tr>
 						<td colspan='2'><input type='button' value='Publicar' onclick='javascript:crearPost();'/></td>
@@ -28,7 +29,7 @@ function obtenerFormularioNuevoPost(){
 
 function construirSelectTemas(){
 	$temas=obtenerTemas();
-	$html="<select>";
+	$html="<select id='tema'>";
 	foreach($temas as $tema){		
 		$idTema=$tema["idTema"];
 		$nombreTema=$tema["tema"];

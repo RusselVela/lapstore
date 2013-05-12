@@ -16,5 +16,19 @@ function show(bloq,postId) {
 }
 
 function crearPost(){
-	alert("ehhh");
+	nombrePost=$('#nombrePost').val();
+	articulo=$('#articulo').val();
+	idTema=$('#tema :selected').val();
+	usuario=$('#usuario').val();
+	if(nombrePost=="" || articulo==""){
+		alert("Debe llenar los campos de nombre y Descripción");
+		return;
+	}
+	if(usuario==""){
+		alert("No se ha iniciado sesión");
+		return;
+	}
+	
+	direccion="include_php/crearPost.php?crearPost=true&articulo="+articulo+"&idTema="+idTema+"&nombrePost="+nombrePost+"&idUsuario="+usuario;
+	location.href=direccion;
 }

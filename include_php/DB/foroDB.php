@@ -97,14 +97,14 @@
         return $posts;
     }
     
-    function agregarPost($usuarioId,$articulo){
-        
-        $conexionDB=abrirConexion();
-        selecionarBD($conexionDB);
-        $sql = "INSERT INTO post (usuarioId, articulo, fecha)
-                VALUES ('".mysql_real_escape_string($usuarioId)."','".mysql_real_escape_string($articulo)."','".date('Y-m-d')."');";
-        if (ejecutarConsulta($sql,$conexionDB)) {
-            
+    function agregarPost($usuarioId,$articulo,$idTema,$nombrePost){  
+        $conexion=abrirConexion();
+        selecionarBD($conexion);
+        $sql = "INSERT INTO post (usuarioId, articulo, fecha,idTema,nombrePost)
+                VALUES ('".mysql_real_escape_string($usuarioId)."','".mysql_real_escape_string($articulo)."','".date('Y-m-d')."','".mysql_real_escape_string($idTema)."','".mysql_real_escape_string($nombrePost)."');";
+		//echo $sql;
+        if (ejecutarConsulta($sql,$conexion)) {
+			
         }
         cerrarConexion($conexionDB);
     }
