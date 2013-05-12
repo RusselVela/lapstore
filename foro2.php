@@ -35,7 +35,8 @@ filtro_login();
             <h1>Foro</h1>
             <div class="marco">
             	<div class="formularioPost">
-                	<input type="button" value="Nuevo Tema" onclick="javascript:mostrarFormulario();"/>
+                	<input type="button" value="Nuevo Tema" onclick="javascript:mostrarFormulario();" id="btnMostrar"/>
+                    <input type="button" value="Ocultar" onclick="javascript:ocultarFormulario();" id="btnOcultar"/>
 					<?php echo obtenerFormularioNuevoPost();//echo crearPost($_SESSION['usuarioId']);?>
                 </div>
             	<div class="tabla">

@@ -2,11 +2,19 @@
 
 $(window).load(function(){
 	$('#formularioPost').css("display", "none");
-	//$('#formularioPost').fadeOut('slow');
+	$('#btnOcultar').css("display","none");
 });
 
 function mostrarFormulario(){
-	$('#formularioPost').fadeIn('slow');
+	$('#formularioPost').fadeIn('slow');	
+	$('#btnMostrar').css("display","none");
+	$('#btnOcultar').css("display","block");
+}
+
+function ocultarFormulario(){	
+	$('#formularioPost').fadeOut('fast');	
+	$('#btnMostrar').css("display","block");
+	$('#btnOcultar').css("display","none");
 }
 
 function show(bloq,postId) {
