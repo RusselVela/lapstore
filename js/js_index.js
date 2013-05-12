@@ -36,7 +36,7 @@ function esEmailValido(email){
     if (email != undefined && email.value != "" ){
         var expreEmail=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/;
         if(!email.value.match(expreEmail)){
-            return false;
+            return true;
         }
         else{
             return true;
