@@ -1,7 +1,7 @@
 <?php
-include_once 'DB/productoDB.php';
-include_once '../config.inc.php';
 
+//include_once 'DB/productoDB.php';
+//include_once '../config.inc.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -14,22 +14,25 @@ include_once '../config.inc.php';
  */
 
     //put your code here
-    function compararProductos(){        
+class gestorComparacion{
+    public function compararProductos(){        
         $tablas = "";
         $caracteristicas =array();
-        for($i=0;$i < count($_GET['id']); $i++){            
-            $caracteristicas[$i] = obtenerCaracteristicasDelProducto($_GET['id'][$i]);
+        if(isset($_GET['idComp'])){
+        for($i=0;$i < count($_GET['idComp']); $i++){        
+//            echo $_GET['idComp'][$i];
+            $caracteristicas[$i] = obtenerCaracteristicasDelProducto($_GET['idComp'][$i]);
 //            echo json_encode($caracteristicas[$i])."XXX<br>";
             
         }
 //        echo json_encode($caracteristicas);
-        
+//        if(count($caracteristicas)>=1){
 $tablas .= '        
 <table width="200" border="1">
   <tr>
     <th>Caracteristicas</th>';
-        for($i = 0 ;  $i < count($_GET['nombreProducto']); $i++){
-            $tablas.= '<th>'.$_GET['nombreProducto'][$i].'</th>';
+        for($i = 0 ;  $i < count($_GET['nomComp']); $i++){
+            $tablas.= '<th>'.$_GET['nomComp'][$i].'</th>';
         }
   $tablas .='</tr>
   <tr>
@@ -45,7 +48,7 @@ $tablas .= '
   $tablas .='
   </tr>
   <tr>
-    <td>Procesador</td>';
+    <td class="par">Procesador</td>';
         for($i = 0 ;  $i < count($caracteristicas); $i++){
             if(isset($caracteristicas[$i]['Procesador'])){
             $tablas.= '<td>'.$caracteristicas[$i]["Procesador"]["valor"].'</td>';
@@ -69,7 +72,7 @@ $tablas .= '
   $tablas .='
   </tr>
   <tr>
-    <td>DD</td>';
+    <td class="par">DD</td>';
         for($i = 0 ;  $i < count($caracteristicas); $i++){
             if(isset($caracteristicas[$i]['DD'])){
             $tablas.= '<td>'.$caracteristicas[$i]["DD"]["valor"].'</td>';
@@ -93,10 +96,13 @@ $tablas .= '
   $tablas .='
   </tr>
 </table>';
-        
-        
-        
         return $tablas ;
+    }    
+    else{
+        return "No hay elementos para comparar";
     }
-//return compararProductos();
+}
+}
+//$g = new gestorComparacion();
+//echo $g->compararProductos();
 ?>

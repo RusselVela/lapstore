@@ -2,6 +2,8 @@
 include_once 'config.inc.php';
 include_once 'include_php/_gestionComparacion.php';
 include_once 'include_php/_gestion_plantilla.php';
+include_once 'include_php/DB/productoDB.php';
+include_once 'config.inc.php';
 filtro_login();
 ?>
 
@@ -32,11 +34,13 @@ filtro_login();
             <h1>Lista de Productos</h1>
             <div class="marco">
 
-                <div class="tabla">                 
+                    <div class="tabla">                 
                         <?php
-                        echo compararProductos();
+                            $g = new gestorComparacion();
+                            echo $g->compararProductos();
                         ?>
-                </div>
+                    </div>
+              
             </div>
         </div>
     </body>

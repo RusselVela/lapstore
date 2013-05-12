@@ -43,12 +43,14 @@ filtro_login();
                     <input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="¿Que busca?"/>
                 </div>
             </div>
-            <div class="productos" id="productosEncontrados">
-
-                <?php
-                echo listarProductosDeCategoria();
-                ?>
-            </div>
+            <form action="comparacionProductos.php" method="get">
+                <input type="submit" name="nombre"   value="COMPARAR"/>       
+                <div class="productos" id="productosEncontrados">
+                    <?php
+                    echo listarProductosDeCategoria();
+                    ?>
+                </div>
+            </form>
         </div>        
         <script src="js/jquery-1.7.2.min.js"></script>
         <script src="js/jquery-ui-1.8.18.custom.min.js"></script>
@@ -83,9 +85,9 @@ filtro_login();
         <script type="text/javascript" >
             function generarInpustHidenCompa(id,nombre)
             {
-                if(document.getElementById('compCK').checked){
-                    imputs = '<input type="hidden" name="idComp"  value="'+id+'"/>';
-                    imputs += '<input type="hidden" name="nomComp"  value="'+nombre+'"/>';
+                if(document.getElementById('compCK'+id).checked){
+                    imputs = '<input type="hidden" name="idComp[]"  value="'+id+'"/>';
+                    imputs += '<input type="hidden" name="nomComp[]"  value="'+nombre+'"/>hola';
                     document.getElementById('comparacion'+id).innerHTML=imputs;
                 }
                 else{

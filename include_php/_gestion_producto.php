@@ -109,7 +109,10 @@ function listarTodosProductos() {
             $cadena_producto .='        <div class="descripcion">' . $SALTO;
             $cadena_producto .='            <h2>' . $producto['nombre'] . '</h2>' . $SALTO;
             $cadena_producto .='            <p>' . $producto['descripcion'] . '</p>' . $SALTO;
-			$cadena_producto.='				<div class="precio">Precio: $'.$producto['costo'].'</div>';
+	    $cadena_producto.='				<div class="precio">Precio: $'.$producto['costo'].'</div>';
+                $cadena_producto .='       <input type="checkbox" id="compCK'.$producto['productoId'].'" value="comp" onchange="generarInpustHidenCompa('.$producto['productoId'].','."'".$producto['nombre']."'".')"> comparar<br>';
+                $cadena_producto .='<div id="comparacion'.$producto['productoId'].'">';
+                $cadena_producto .='</div>';
             $cadena_producto .='            <input type="button" class="boton"   onclick="javascript:place(' . $producto['productoId'] . ',' . $_SESSION['usuarioId'] . ')" value="AgregarCarrito"/>' . $SALTO;
             $cadena_producto .='            <input type="button" class="boton" onclick="verDetalleProducto(' . $producto['productoId'] . ')"  value="Ver Detalles"/>' . $SALTO;
             $cadena_producto .='        </div>' . $SALTO;
