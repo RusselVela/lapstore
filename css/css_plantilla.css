@@ -2,15 +2,6 @@
 /* CSS Document */
 /*Etiquetas generales*/
 
-.foro{
-	text-align:center;
-	margin:auto;
-}
-
-.cabezaTema{
-	font-weight:bolder;
-}
-
 body{
     overflow-y:scroll;
     background:#29B5E9;

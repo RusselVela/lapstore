@@ -6,6 +6,7 @@ div.tabla{
 }
 div.tabla table{    
     width:699px;
+	border:thin;
 }
 table td.email div{      
     margin: 0px;
@@ -28,4 +29,9 @@ div.tabla table tr td img{
 	width:25px;
 	height:25px;	
 	
+}
+
+div.tabla table tr td{
+	font-size:14px;
+	background:#CCC;
 }

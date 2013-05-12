@@ -3,19 +3,57 @@
 include_once 'DB/foroDB.php';
 include_once 'DB/usuarioDB.php';
 
+function obtenerFormularioNuevoPost(){
+	$html=" <div id='formularioPost'>
+				<table>
+					<tr>
+						<td>Categoría</td>
+						<td>".construirSelectTemas()."</td>
+					</tr>
+					<tr>
+						<td>Título</td>
+						<td><input type='text'/></td>
+					</tr>
+					<tr>
+						<td>Contenido</td>
+						<td class='fp'><textarea id='txa'></textarea></td>
+					</tr>
+					<tr>
+						<td colspan='2'><input type='button' value='Publicar' onclick='javascript:crearPost();'/></td>
+					</tr>
+				</table>
+			</div>";
+	return $html;
+}
+
+function construirSelectTemas(){
+	$temas=obtenerTemas();
+	$html="<select>";
+	foreach($temas as $tema){		
+		$idTema=$tema["idTema"];
+		$nombreTema=$tema["tema"];
+		$html.="<option value='".$idTema."'>".$nombreTema."</option>";
+	}
+	$html.="</select>";
+	return $html;
+}
+
+function crearPost($idUsuario){
+}
+
 function listarTemas(){
 	$temas=obtenerTemas();
-	$html="<table class='foro'>";
+	$html="<table>";
 	foreach($temas as $tema){
 		$idTema=$tema["idTema"];
 		$nombreTema=$tema["tema"];
 		$usuario=obtenerUsuarioPorId($tema["creador"]);
 		$nombreUsuario=$usuario["nombre"]." ".$usuario["apellido"];
 		$numeroPosts=$tema["numeroPosts"];
-		$html.="<tr class='cabezaTema'>
-					<td>".$nombreTema."</a></td>
-					<td>".$nombreUsuario."</td>
-					<td>".$numeroPosts."</td>
+		$html.="<tr>
+					<th>".$nombreTema."</td>
+					<th>".$nombreUsuario."</td>
+					<th>".$numeroPosts." posts</td>
 				</tr>";
 		$html.=listarPostsPorTema($idTema);
 	}
@@ -35,7 +73,7 @@ function listarPostsPorTema($idTema){
 		$numeroRespuestas=$post["respuestas"];
 		$html.="<td><a href='post.php?idPost=".$post["idPost"]."'>".$nombrePost."</a></td>
 				<td>".$nombreUsuario."</td>
-				<td>".$numeroRespuestas."</td>";	
+				<td>".$numeroRespuestas." respuestas</td>";	
 		$html.="</tr>";
 	}
 	return $html;

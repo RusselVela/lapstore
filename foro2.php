@@ -8,13 +8,15 @@ filtro_login();
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Foro</title>      
+        <title>Foro</title>
+        <script src="js/jquery-1.7.2.min.js" language="javascript" type="text/javascript"></script>      
         <script src="js/js_foro.js" language="javascript" type="text/javascript" ></script>		
         <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" /> 
         <?php
         echo estilo();
         ?>        
         <link href="css/css_foro.css" rel="stylesheet" type="text/css" />
+        <link href="css/css_tablas.css" rel="stylesheet" type="text/css"/>
         <script language="JavaScript" type="text/javascript" src="ajax/ajax.js"></script>
         <script language="JavaScript" type="text/javascript" src="js/js_validaciones_eliminar.js"></script>
         <?php
@@ -31,14 +33,18 @@ filtro_login();
         </div>       
         <div class="contenido" >
             <h1>Foro</h1>
-            	<div>
+            <div class="marco">
+            	<div class="formularioPost">
+                	<input type="button" value="Nuevo Tema" onclick="javascript:mostrarFormulario();"/>
+					<?php echo obtenerFormularioNuevoPost();//echo crearPost($_SESSION['usuarioId']);?>
+                </div>
+            	<div class="tabla">
 					<?php echo listarTemas();?> 
-                </div>           
-                <div class="clearboth"></div>
-            </div>  
-
-            <?php
-//            registrarPost();
-            ?>
+            	</div>           
+            	<div class="clearboth"></div>
+            	<?php
+//            	registrarPost();
+            	?>
+        	</div>
         </div>
     </body>
