@@ -17,7 +17,6 @@ filtro_login();
         ?>
 
         <link href="css/css_catalogo.css" rel="stylesheet" type="text/css" />
-        <script language="javascript" type="text/javascript" src="js/js_producto.js" ></script>
         <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
 
         <?php
@@ -40,7 +39,8 @@ filtro_login();
             <h1><span>Productos</span></h1>
             <div class="marco">
                 <div class="div_buscador">
-                    <input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="¿Que busca?"/>
+                <?php echo recibirBusqueda();?>
+<!--                    <input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="¿Que busca?"/>-->
                 </div>
             </div>
             <form action="comparacionProductos.php" method="get">
@@ -57,12 +57,26 @@ filtro_login();
         <script src="js/jquery.smooth-scroll.min.js"></script>
         <script src="js/lightbox.js"></script>
 
+<<<<<<< HEAD
         <script>
             jQuery(document).ready(function($) {
                 $('a').smoothScroll({
                     speed: 1000,
                     easing: 'easeInOutCubic'
                 });
+=======
+<script>
+  jQuery(document).ready(function($) {		
+  		parametro=$('#productoABuscar').val();
+		if(parametro!="¿Que busca?" && parametro!=""){
+			desplegarResultados();
+		}	
+	  
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
+>>>>>>> origin/Russel
 
                 $('.showOlderChanges').on('click', function(e){
                     $('.changelog .old').slideDown('slow');
@@ -75,6 +89,7 @@ filtro_login();
             _gaq.push(['_setAccount', 'UA-2196019-1']);
             _gaq.push(['_trackPageview']);
 
+<<<<<<< HEAD
             (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -95,5 +110,13 @@ filtro_login();
                 }
             }            
         </script>
+=======
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+>>>>>>> origin/Russel
     </body>
 </html>

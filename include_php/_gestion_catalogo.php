@@ -213,4 +213,18 @@ function eliminarCategoria() {
     }
 }
 
+
+function recibirBusqueda(){
+	$html='<input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="';
+	if(isset($_GET["buscar"]) && isset($_GET["parametro"])){
+		if($_GET["buscar"]=="true" && $_GET["parametro"]!=""){
+			$html.=$_GET["parametro"].'"/>';
+		}else{
+			$html.='¿Que busca?"/>';
+		}
+	}else{
+		$html.='¿Que busca?"/>';
+	}
+	return $html;
+}
 ?>

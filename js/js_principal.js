@@ -28,3 +28,11 @@ function colocarTextoDefault(){
 function obtenerTextoDefecto(){
 	return textoDefecto;
 }
+
+function buscar(){
+	parametro=$('#buscador').val();
+	if(parametro==textoDefecto || parametro=="")
+		return false;
+	direccion="categoria.php?buscar=true&parametro="+parametro;
+	location.href=direccion;
+}

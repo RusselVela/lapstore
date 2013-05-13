@@ -9,7 +9,8 @@ include_once '_gestion_catalogo.php';
 function generarBuscador(){
 	$html="<div class='div_buscador'>
 				<input type='text' id='buscador' onfocus='javascript:borrarTextoDefault();' onblur='javascript:colocarTextoDefault();' value='¿Que es lo que busca?' size='35'/>
-           </div>";
+           		<input type='button' id='btnBuscar' onclick='javascript:buscar()' value='Buscar'/>
+		   </div>";
 	return $html;
 }
 
