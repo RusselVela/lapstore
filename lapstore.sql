@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-05-2013 a las 22:53:47
+-- Tiempo de generación: 11-05-2013 a las 19:35:20
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -135,19 +135,22 @@ CREATE TABLE IF NOT EXISTS `post` (
   `articulo` varchar(1000) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `idTema` int(11) NOT NULL,
-  `nombrePost` varchar(100) NOT NULL,
   PRIMARY KEY (`postId`),
   KEY `usuarioId` (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Volcado de datos para la tabla `post`
 --
 
-INSERT INTO `post` (`postId`, `usuarioId`, `articulo`, `fecha`, `idTema`, `nombrePost`) VALUES
-(1, 13, 'este es un pooooost!!', '2013-05-29', 3, 'Problemas'),
-(2, 13, 'Este es un ejemplo muy muy muy muy muy largoooooo....', '2013-05-12', 3, 'Ejemplo Largo'),
-(3, 13, 'este es un hola mundo', '2013-05-12', 4, 'Hola Mundo');
+INSERT INTO `post` (`postId`, `usuarioId`, `articulo`, `fecha`, `idTema`) VALUES
+(9, 1, '{Ã±l{Ã±l{Ã±', '2012-05-20', 0),
+(10, 1, 'qÃ±lkdlÃ±k', '2012-05-21', 0),
+(12, 1, '{Ã±l{Ã±l {Ã±l{Ã±l {Ã±l{Ã±l {Ã±l{Ã±Ã±l aslkjdddddd alskjdddddddd aslkjddddddddddddd lkajsdddddddddddddd qlskdjaaaaaa lkajsdddalskjdsa lkjasd Ã±{{llllllllllllllllllllllllllllllllllllllllllllllll dfllllllllllllllllllllllllllllllllllllllllllllllllllllll sd{{{{{{{{{{{{{{{{{{{{{{', '2012-05-22', 0),
+(13, 8, 'Hola a todos :)', '2012-05-22', 0),
+(14, 1, '\r\n', '2012-05-23', 0),
+(15, 1, '{lfds{l{Ã±l', '2012-05-23', 0),
+(16, 8, '-ksdss{Ã±k {Ã±l{dfl{Ã±fd {lfd{l {fdl{Ã±fd {l{Ã± {fdl{Ã±gfdl {lfdÃ±lgf d{l fdg{l  {Ã±lfdlfgd', '2012-05-23', 0);
 
 -- --------------------------------------------------------
 
@@ -193,16 +196,35 @@ CREATE TABLE IF NOT EXISTS `repost` (
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`repostId`),
   KEY `usuarioId` (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
 
 --
 -- Volcado de datos para la tabla `repost`
 --
 
 INSERT INTO `repost` (`repostId`, `postID`, `usuarioId`, `articulo`, `fecha`) VALUES
-(1, 1, 10, 'esta es una respuesta', '2013-05-18'),
-(2, 1, 13, 'respuesta  para borrar', '2013-05-11'),
-(3, 3, 13, 'respuesta a hola mundo', '2013-05-12');
+(1, 2, 1, 'EW{Ã‘LERW {LWE{LL{Ã‘L WE{Ã‘LEW {Ã‘LSC{ FSD', '2012-05-17'),
+(8, 4, 1, 'sdfdfsdsf', '2012-05-20'),
+(9, 4, 1, 'fggfgffg', '2012-05-20'),
+(21, 1, 1, 'dsfds', '2012-05-20'),
+(22, 1, 1, 'dsfds', '2012-05-20'),
+(23, 1, 1, 'dsfds', '2012-05-20'),
+(24, 3, 1, 'dssdsdsd', '2012-05-20'),
+(25, 3, 1, 'asasasas', '2012-05-20'),
+(26, 3, 1, 'dsdsdsds', '2012-05-20'),
+(32, 7, 1, 'eipoi poiew piewopiewipowei ewweopwepoiowe opewipo ewpoiweop ewpoiew ew\r\n', '2012-05-20'),
+(34, 8, 1, 'lskaÃ±dlk lÃ±kasd Ã±lksda Ã±lksda Ã±k sadÃ±lk sadÃ±lk asdÃ±lkasdÃ±lk Ã±lksad skkkkkk dkkkkkdk ', '2012-05-20'),
+(35, 9, 1, 'Ã±lkdÃ±lkÃ±lksdÃ±lk', '2012-05-20'),
+(37, 11, 1, '.,sakÃ±.msd.,mcd', '2012-05-21'),
+(38, 10, 1, '-.,wsq-.d,-.sd,', '2012-05-21'),
+(39, 10, 1, 'Ã±z<lksÃ±lksd', '2012-05-21'),
+(40, 10, 1, 'edl{weÃ±l{Ã±lwe', '2012-05-21'),
+(41, 10, 1, '3245454Â´0Â¿''50''Â¿0540Â¿''50Â¿''0Â¿''4', '2012-05-21'),
+(43, 13, 8, '^^ ', '2012-05-22'),
+(44, 10, 1, 'defÃ±kÃ±ldsfklkfd', '2012-05-22'),
+(45, 13, 1, 'Ã±lkdfs{Ã±ldsfÃ±ldfs{l{Ã±sl{Ã±fsd', '2012-05-23'),
+(46, 13, 1, '{Ã±ldasdl{sdl{Ã±sdl{', '2012-05-23'),
+(47, 15, 1, 'Ã±l,Ã±llÃ±', '2012-05-23');
 
 -- --------------------------------------------------------
 
@@ -213,17 +235,8 @@ INSERT INTO `repost` (`repostId`, `postID`, `usuarioId`, `articulo`, `fecha`) VA
 CREATE TABLE IF NOT EXISTS `temas` (
   `idTema` int(11) NOT NULL AUTO_INCREMENT,
   `nombreTema` varchar(100) NOT NULL,
-  `idUsuarioCreador` int(11) NOT NULL,
   PRIMARY KEY (`idTema`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Volcado de datos para la tabla `temas`
---
-
-INSERT INTO `temas` (`idTema`, `nombreTema`, `idUsuarioCreador`) VALUES
-(3, 'Varios', 13),
-(4, 'Computadoras', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
