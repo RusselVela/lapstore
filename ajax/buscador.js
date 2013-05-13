@@ -65,6 +65,8 @@ function esTeclaValida(evento)
 
 function desplegarResultados(){    
     var valor=document.getElementById("productoABuscar").value;
+	var index=document.getElementById("selectCategoria").selectedIndex;
+	var categoria=document.getElementById("selectCategoria")[index].value;
     // Valido con una expresion regular el contenido de lo que el usuario ingresa
     if(valor==""){
         document.getElementById("productosEncontrados").innerHTML="";
@@ -74,7 +76,7 @@ function desplegarResultados(){
         var ajax=nuevoAjax();
         ajax.open("POST", "include_php/_gestion_buscador.php", true);
         ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        ajax.send("busqueda="+valor);
+        ajax.send("busqueda="+valor+"&filtro="+categoria);
         ajax.onreadystatechange=function(){	
             if (ajax.readyState==4){
                 var respuesta="";

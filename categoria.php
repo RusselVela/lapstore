@@ -39,7 +39,9 @@ filtro_login();
             <h1><span>Productos</span></h1>
             <div class="marco">
                 <div class="div_buscador">
-                <?php echo recibirBusqueda();?>
+                <?php 	echo recibirBusqueda();
+						echo obtenerOpcionesAvanzadas();
+				?>
 <!--                    <input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="¿Que busca?"/>-->
                 </div>
             </div>
@@ -56,7 +58,10 @@ filtro_login();
 
 <script>
   jQuery(document).ready(function($) {		
-  		parametro=$('#productoABuscar').val();
+  		$("#btnOcultarAvanzadas").css("display","none");
+		$("#avanzadas").css("display","none");
+		
+		parametro=$('#productoABuscar').val();
 		if(parametro!="¿Que busca?" && parametro!=""){
 			desplegarResultados();
 		}	
@@ -82,6 +87,19 @@ filtro_login();
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  
+ function mostrarAvanzadas(){
+	 $("#btnOcultarAvanzadas").fadeIn("slow");
+	 $("#avanzadas").fadeIn("slow");
+	 $("#btnMostrarAvanzadas").fadeOut("slow");
+ }
+ 
+ function ocultarAvanzadas(){	 
+ 	$("#btnMostrarAvanzadas").fadeIn("fast");
+	$("#avanzadas").fadeOut("fast");	 
+	$("#btnOcultarAvanzadas").fadeOut("fast");
+	$("#selectCategoria option[value=-1]").attr("selected",true);
+ }
 </script>
     </body>
 </html>

@@ -222,6 +222,26 @@ function recibirBusqueda(){
 	}else{
 		$html.='¿Que busca?"/>';
 	}
+	$html.="<br/><input type='button' id='btnMostrarAvanzadas' value='Mostrar Opciones Avanzadas' onclick='javascript:mostrarAvanzadas();'/>";
+	$html.="<input type='button' id='btnOcultarAvanzadas' value='Ocultar Opciones Avanzadas' onclick='javascript:ocultarAvanzadas();'/>";
+	return $html;
+}
+
+function obtenerOpcionesAvanzadas(){
+	$html="	<div id='avanzadas'>
+				<p>filtrar por:</p><select id='selectCategoria'>";
+	$html.=obtenerCategoriasParaSelect();				
+	$html.="	</select>
+			</div>";
+	return $html;
+}
+
+function obtenerCategoriasParaSelect(){
+	$html="<option value='-1'><option>";
+	$categorias=obtenerTodasCategorias();
+	foreach($categorias as $categoria){
+		$html.="<option value='".$categoria["categoriaId"]."'>".$categoria["nombre"]."</option>";
+	}
 	return $html;
 }
 ?>
