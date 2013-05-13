@@ -2,9 +2,9 @@
 include_once 'DB/buscadorDB.php';
 include_once '../config.inc.php';
 
-function listarProductosEncontrados($parametro) {
+function listarProductosEncontrados($parametro,$categoria) {
     $SALTO = "\n";
-    $productos =buscarCoincidencias($parametro);
+    $productos =buscarCoincidencias($parametro,$categoria);
     $cadena_producto = "";
     foreach ($productos as $producto) {
         if($producto['cantidad']>0){
@@ -39,7 +39,7 @@ function listarProductosEncontrados($parametro) {
 session_start();
 
 if(isset($_POST["busqueda"])){
-    echo listarProductosEncontrados($_POST["busqueda"]);
+    echo listarProductosEncontrados($_POST["busqueda"],$_POST["filtro"]);
 }
 
 ?>

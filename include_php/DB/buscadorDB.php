@@ -9,11 +9,15 @@ function validaBusqueda($parametro) {
         return FALSE;
 }
 
-function buscarCoincidencias($parametro) {
+function buscarCoincidencias($parametro,$categoria) {
     //if (validaBusqueda($parametro)) {
+		$filtro="";
+		if($categoria!=-1){
+			$filtro=" AND categoriaId=".$categoria;
+		}
         $conexion = abrirConexion();
         selecionarBD($conexion);
-        $sql = "SELECT * FROM producto WHERE nombre LIKE '" . mysql_real_escape_string($parametro) . "%' ORDER BY nombre ASC";
+        $sql = "SELECT * FROM producto WHERE nombre LIKE '" . mysql_real_escape_string($parametro) . "%'".$filtro." ORDER BY nombre ASC";
 
         $resultado_peticion = ejecutarConsulta($sql, $conexion);
         $indice = 0;
