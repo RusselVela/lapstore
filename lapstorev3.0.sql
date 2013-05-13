@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-05-2013 a las 22:57:13
+-- Tiempo de generación: 14-05-2013 a las 01:34:08
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -49,6 +49,28 @@ INSERT INTO `banner` (`bannerId`, `imagen_1`, `desc_1`, `imagen_2`, `desc_2`, `i
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `caracteristicas`
+--
+
+CREATE TABLE IF NOT EXISTS `caracteristicas` (
+  `idProducto` int(11) NOT NULL,
+  `atributo` varchar(50) NOT NULL,
+  `valor` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `caracteristicas`
+--
+
+INSERT INTO `caracteristicas` (`idProducto`, `atributo`, `valor`) VALUES
+(1, 'Procesador', 'Intel Dual'),
+(1, 'DD', '500GB'),
+(3, 'DD', '500GB'),
+(3, 'Procesador', 'Intel Dual 4');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categoria`
 --
 
@@ -71,7 +93,7 @@ INSERT INTO `categoria` (`categoriaId`, `nombre`, `cantidad`, `url_icono`, `desc
 (5, 'Pantallas', 0, 'img/categorias/none.png', ''),
 (6, 'Ratones', 0, 'img/categorias/none.png', ''),
 (8, 'Accesorios', 0, NULL, ''),
-(9, 'Audífonos', 0, NULL, '');
+(9, 'Audifonos', 0, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -138,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `nombrePost` varchar(100) NOT NULL,
   PRIMARY KEY (`postId`),
   KEY `usuarioId` (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `post`
@@ -147,7 +169,8 @@ CREATE TABLE IF NOT EXISTS `post` (
 INSERT INTO `post` (`postId`, `usuarioId`, `articulo`, `fecha`, `idTema`, `nombrePost`) VALUES
 (1, 13, 'este es un pooooost!!', '2013-05-29', 3, 'Problemas'),
 (2, 13, 'Este es un ejemplo muy muy muy muy muy largoooooo....', '2013-05-12', 3, 'Ejemplo Largo'),
-(3, 13, 'este es un hola mundo', '2013-05-12', 4, 'Hola Mundo');
+(3, 13, 'este es un hola mundo', '2013-05-12', 4, 'Hola Mundo'),
+(4, 13, 'asdasdsadsa', '2013-05-13', 4, 'nuevo');
 
 -- --------------------------------------------------------
 
@@ -173,10 +196,10 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`productoId`, `nombre`, `categoriaId`, `envio`, `costo`, `cantidad`, `url_icono`, `descripcion`) VALUES
-(1, 'Mouse2', 3, 122.00, 122.00, 100, 'img/productos/producto1.jpeg', 'Quisque enim ligula, feugiat et consequat id, elementum a tellus. Mauris at feugiat arcu. Aliquam dolor neque, tincidunt ut pharetra et, egestas eu libero.'),
-(3, 'Mouse1', 5, 12.01, 12.01, 100, 'img/productos/producto3.jpeg', 'Morbi sollicitudin fermentum tellus. Aliquam egestas volutpat ligula, in condimentum justo tincidunt a. Maecenas rhoncus semper blandit.'),
-(4, 'Pantalla LCD 40'' HTC', 6, 20.00, 340.00, 100, 'img/productos/producto4.jpeg', 'Lorem ipsum dolor sit amet.'),
-(5, 'Teclado Asus 9x', 3, 12.00, 12.00, 100, 'img/productos/producto5.jpeg', 'Pellentesque dignissim diam id nisl viverra placerat. In hac habitasse platea dictumst. Vestibulum non lacus nec justo volutpat pellentesque. '),
+(1, 'Mouse Genius', 6, 122.00, 122.00, 100, 'img/productos/producto1.jpeg', 'Quisque enim ligula, feugiat et consequat id, elementum a tellus. Mauris at feugiat arcu. Aliquam dolor neque, tincidunt ut pharetra et, egestas eu libero.'),
+(3, 'Mouse Gamer', 6, 12.01, 12.01, 100, 'img/productos/producto3.jpeg', 'Morbi sollicitudin fermentum tellus. Aliquam egestas volutpat ligula, in condimentum justo tincidunt a. Maecenas rhoncus semper blandit.'),
+(4, 'Pantalla LCD 40'' HTC', 5, 20.00, 340.00, 100, 'img/productos/producto4.jpeg', 'Lorem ipsum dolor sit amet.'),
+(5, 'Teclado Asus 9x', 8, 12.00, 12.00, 100, 'img/productos/producto5.jpeg', 'Pellentesque dignissim diam id nisl viverra placerat. In hac habitasse platea dictumst. Vestibulum non lacus nec justo volutpat pellentesque. '),
 (6, 'nueva Compu', 3, 12.50, 12.50, 10, 'img/productos/producto6.jpeg', 'moninibusda adas');
 
 -- --------------------------------------------------------
@@ -193,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `repost` (
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`repostId`),
   KEY `usuarioId` (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `repost`
@@ -202,7 +225,9 @@ CREATE TABLE IF NOT EXISTS `repost` (
 INSERT INTO `repost` (`repostId`, `postID`, `usuarioId`, `articulo`, `fecha`) VALUES
 (1, 1, 10, 'esta es una respuesta', '2013-05-18'),
 (2, 1, 13, 'respuesta  para borrar', '2013-05-11'),
-(3, 3, 13, 'respuesta a hola mundo', '2013-05-12');
+(3, 3, 13, 'respuesta a hola mundo', '2013-05-12'),
+(4, 1, 13, 'este es un comentario', '2013-05-14'),
+(5, 1, 13, 'otro comentario', '2013-05-14');
 
 -- --------------------------------------------------------
 
