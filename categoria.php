@@ -17,7 +17,6 @@ filtro_login();
         ?>
 
         <link href="css/css_catalogo.css" rel="stylesheet" type="text/css" />
-        <script language="javascript" type="text/javascript" src="js/js_producto.js" ></script>
         <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
 
         <?php
@@ -40,7 +39,8 @@ filtro_login();
             <h1><span>Productos</span></h1>
             <div class="marco">
                 <div class="div_buscador">
-                    <input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="¿Que busca?"/>
+                <?php echo recibirBusqueda();?>
+<!--                    <input type="text" id="productoABuscar" onkeyup="if(esTeclaValida(event)==1){desplegarResultados();}"  onfocus="borrarTextoDefault();" onblur="colocarTextoDefault();" value="¿Que busca?"/>-->
                 </div>
             </div>
             <div class="productos" id="productosEncontrados">
@@ -55,7 +55,12 @@ filtro_login();
 <script src="js/lightbox.js"></script>
 
 <script>
-  jQuery(document).ready(function($) {
+  jQuery(document).ready(function($) {		
+  		parametro=$('#productoABuscar').val();
+		if(parametro!="¿Que busca?" && parametro!=""){
+			desplegarResultados();
+		}	
+	  
       $('a').smoothScroll({
         speed: 1000,
         easing: 'easeInOutCubic'
@@ -77,7 +82,6 @@ filtro_login();
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
     </body>
 </html>
