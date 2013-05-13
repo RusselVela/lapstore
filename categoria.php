@@ -59,16 +59,13 @@ filtro_login();
         <script src="js/jquery.smooth-scroll.min.js"></script>
         <script src="js/lightbox.js"></script>
 
-<<<<<<< HEAD
         <script>
             jQuery(document).ready(function($) {
                 $('a').smoothScroll({
                     speed: 1000,
                     easing: 'easeInOutCubic'
                 });
-=======
-<script>
-  jQuery(document).ready(function($) {		
+  //jQuery(document).ready(function($) {		
   		$("#btnOcultarAvanzadas").css("display","none");
 		$("#avanzadas").css("display","none");
 		
@@ -81,7 +78,6 @@ filtro_login();
         speed: 1000,
         easing: 'easeInOutCubic'
       });
-//>>>>>>> origin/Russel
 
                 $('.showOlderChanges').on('click', function(e){
                     $('.changelog .old').slideDown('slow');
@@ -94,15 +90,12 @@ filtro_login();
             _gaq.push(['_setAccount', 'UA-2196019-1']);
             _gaq.push(['_trackPageview']);
 
-//<<<<<<< HEAD
             (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
 
-        </script>
-        <script type="text/javascript" >
             function generarInpustHidenCompa(id,nombre)
             {
                 if(document.getElementById('compCK'+id).checked){
@@ -114,8 +107,6 @@ filtro_login();
                     document.getElementById('comparacion'+id).innerHTML=""; 
                 }
             }            
-        </script>
-=======
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -135,6 +126,5 @@ filtro_login();
 	$("#selectCategoria option[value=-1]").attr("selected",true);
  }
 </script>
->>>>>>> origin/Russel
     </body>
 </html>
