@@ -1,5 +1,5 @@
 <?php 
-
+include_once("../config.inc.php");
 include("DB/foroDB.php");
 
 if(isset($_GET["crearPost"]) && $_GET["crearPost"]==true){
