@@ -76,7 +76,7 @@ filtro_login();
         speed: 1000,
         easing: 'easeInOutCubic'
       });
->>>>>>> origin/Russel
+//>>>>>>> origin/Russel
 
                 $('.showOlderChanges').on('click', function(e){
                     $('.changelog .old').slideDown('slow');
@@ -89,7 +89,7 @@ filtro_login();
             _gaq.push(['_setAccount', 'UA-2196019-1']);
             _gaq.push(['_trackPageview']);
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
             (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
