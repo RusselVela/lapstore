@@ -110,12 +110,15 @@ function listarProductosDeCategoria() {
             	$cadena_post .='            <a href="' . $producto['url_icono'] . '" rel="lightbox"><img src="' . $producto['url_icono'] . '" alt="Imagen del producto" /></a>' . $SALTO;
                 $cadena_post .='        </div>' . $SALTO;
                 $cadena_post .='        <div class="descripcion">' . $SALTO;
+                $cadena_post .='       <input type="checkbox" id="compCK'.$producto['productoId'].'" value="comp" onchange="generarInpustHidenCompa('.$producto['productoId'].','."'".$producto['nombre']."'".')"> comparar<br>';
+                $cadena_post .='<div id="comparacion'.$producto['productoId'].'">';
+                $cadena_post .='</div>';
                 $cadena_post .='            <h2>' . $producto['nombre'] . '</h2>' . $SALTO;
                 $cadena_post .='            <p>' . $producto['descripcion'] . '</p>' . $SALTO;
-				$cadena_post .='			<div class="precio">Precio:$'.$producto['costo'].'</div>';
+		$cadena_post .='			<div class="precio">Precio:$'.$producto['costo'].'</div>';
                 $cadena_post .='            <input type="button" class="boton" onclick="javascript:place(' . $producto['productoId'] . ',' . $_SESSION['usuarioId'] . ')" value="AgregarCarrito"/>' . $SALTO;
                 $cadena_post .='            <input type="button" class="boton" onclick="verDetalleProducto(' . $producto['productoId'] . ')"  value="Ver Detalles"/>' . $SALTO;
-                $cadena_post .='        </div>' . $SALTO;
+                $cadena_post .='        </div>' . $SALTO;                
                 $cadena_post .='        <div class="clearboth"></div>' . $SALTO;
                 $cadena_post .='    </div>' . $SALTO;
             }

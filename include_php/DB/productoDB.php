@@ -1,4 +1,5 @@
 <?php
+include_once 'conexionGeneral.php';
     function obtenerIdSiguiente(){
         $conexion = abrirConexion();
         selecionarBD($conexion);
@@ -169,6 +170,27 @@
         }
         cerrarConexion($conexion);
         return $registro_eliminado;
+    }
+    function  obtenerCaracteristicasDelProducto($productoId){
+        $conexion=abrirConexion();
+        selecionarBD($conexion);
+        $sql = "SELECT * FROM caracteristicas WHERE idProducto ='".mysql_real_escape_string($productoId)."'";
+//        echo $sql;
+        $resultado_peticion = ejecutarConsulta($sql,$conexion);
+        
+        $caracteristicasProducto=  array();
+        $i=0;
+//        echo "zzzz";
+        while ($fila = mysql_fetch_array($resultado_peticion)) {
+//            echo "zzzz";
+//            echo "<br>".$fila['DD']."<br>";
+//            echo "zzzz";
+            $caracteristicasProducto[$fila['atributo']] = $fila;
+            $i++;
+        }
+        cerrarConexion($conexion);
+//        echo "<br>".json_encode($caracteristicasProducto)."<br>";
+        return $caracteristicasProducto;
     }
 
 ?>
